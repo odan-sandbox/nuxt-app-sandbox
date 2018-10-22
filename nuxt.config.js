@@ -1,3 +1,6 @@
+// eslint-disable-next-line
+const StylelintPlugin = require('stylelint-webpack-plugin');
+
 const pkg = require('./package');
 
 module.exports = {
@@ -65,6 +68,13 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/,
         });
+
+        config.plugins.push(new StylelintPlugin({
+          files: [
+            '**/*.vue',
+            '**/*.scss',
+          ],
+        }));
       }
     },
   },
