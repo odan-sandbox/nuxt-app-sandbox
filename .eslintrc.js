@@ -8,7 +8,8 @@ module.exports = {
     parser: 'babel-eslint'
   },
   extends: [
-    'plugin:vue/recommended'
+    'plugin:vue/recommended',
+    'airbnb-base',
   ],
   // required to lint *.vue files
   plugins: [
@@ -18,5 +19,10 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+  },
+  settings: {
+    'import/resolver': {
+      'nuxt-import' : {}
+    }
   }
 }
