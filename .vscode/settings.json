@@ -1,0 +1,20 @@
+{
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    {
+      "autoFix": true,
+      "language": "vue"
+    },
+  ],
+  "stylelint.enable": true,
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "\\.(vue|scss)",
+        "isAsync": true,
+        "cmd": "yarn lint:css --fix"
+      },
+    ]
+  }
+}
